@@ -27,7 +27,7 @@ const Menu = () => {
   return (
     <section
       id="menu"
-      className="py-20 bg-pink-50 dark:bg-gray-900 transition-colors"
+      className="scroll-mt-24 py-20 bg-pink-50 dark:bg-gray-900 transition-colors"
     >
       <div className="max-w-7xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-pink-600 dark:text-yellow-400 mb-10">
