@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
+import Home from "./components/Home";
 
 // Lazy-loaded components
 const About = lazy(() => import("./components/About"));
@@ -14,6 +15,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      <Home />
       <Header />
 
       <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
