@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 
 export default function Header() {
   const [darkMode, setDarkMode] = useState(() => {
-    // Persist user preference across reloads
-    return localStorage.getItem("theme") === "dark";
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme === "dark") return true;
+    if (storedTheme === "light") return false;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
 
   useEffect(() => {
