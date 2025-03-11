@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Gallery from "./components/Gallery";
+import Testimonials from "./components/Testimonials";
 
 // Lazy-loaded components
 const About = lazy(() => import("./components/About"));
@@ -20,6 +21,7 @@ function App() {
       <Header />
       <Menu />
       <Gallery />
+      <Testimonials />
 
       <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
         <About />
