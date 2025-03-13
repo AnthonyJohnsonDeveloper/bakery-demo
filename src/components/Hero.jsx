@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Hero = () => {
   return (
+    
     <section className="bg-white dark:bg-gray-900 transition-colors">
       <div className="max-w-7xl mx-auto px-4 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Content */}

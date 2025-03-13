@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Helmet } from "react-helmet";
 const Navbar = () => {
   return (
     <nav className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
