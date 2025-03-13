@@ -4,15 +4,14 @@ import { Link } from "react-router-dom";
 
 // Array of image URLs
 const images = [
-  "./assets/1.svg",
-  "./assets/2.svg",
-  "./assets/3.svg",
-  "./assets/4.svg",
-  "./assets/5.svg",
-  "./assets/6.svg",
-  "./assets/7.svg",
-  "./assets/8.svg",
-  // Add paths to your 16 images
+  "/images/1.jpg",
+  "/images/2.jpg",
+  "/images/3.jpg",
+  "/images/4.jpg",
+  "/images/5.jpg",
+  "/images/6.jpg",
+  "/images/7.jpg",
+  "/images/8.jpg",
 ];
 
 const Gallery = () => {

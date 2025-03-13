@@ -27,7 +27,7 @@ const Hero = () => {
         {/* Right Image */}
         <div className="flex justify-center">
           <img
-            src="https://source.unsplash.com/600x400/?bakery,cake"
+            src="./assets/1.svg"
             alt="Delicious baked goods"
             loading="lazy"
             className="rounded-lg shadow-lg w-full max-w-md"

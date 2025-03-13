@@ -23,7 +23,7 @@ const About = () => {
         {/* Optional Image */}
         <div className="flex-1">
           <img
-            src="https://via.placeholder.com/500x350?text=Bakery+Goodies"
+            src="./assets/1.svg"
             alt="Delicious baked goods"
             width="500"
             height="350"
