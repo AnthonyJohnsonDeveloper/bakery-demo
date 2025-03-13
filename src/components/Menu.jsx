@@ -1,25 +1,26 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const items = [
   {
     name: "Chocolate Cupcake",
     price: "$3.50",
-    image: "https://via.placeholder.com/300x200?text=Cupcake",
+    image: "./assets/1.svg",
   },
   {
     name: "Strawberry Tart",
     price: "$4.00",
-    image: "https://via.placeholder.com/300x200?text=Tart",
+    image: "./assets/2.svg",
   },
   {
     name: "Fresh Baguette",
     price: "$2.25",
-    image: "https://via.placeholder.com/300x200?text=Baguette",
+    image: "./assets/3.svg",
   },
   {
     name: "Vanilla Macaron",
     price: "$1.75",
-    image: "https://via.placeholder.com/300x200?text=Macaron",
+    image: "./assets/4.svg",
   },
 ];
 
