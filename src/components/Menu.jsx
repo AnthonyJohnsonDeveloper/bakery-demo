@@ -5,22 +5,22 @@ const items = [
   {
     name: "Chocolate Cupcake",
     price: "$3.50",
-    image: "./assets/1.svg",
+    image: "/images/1.jpg",
   },
   {
     name: "Strawberry Tart",
     price: "$4.00",
-    image: "./assets/2.svg",
+    image: "/images/2.jpg",
   },
   {
     name: "Fresh Baguette",
     price: "$2.25",
-    image: "./assets/3.svg",
+    image: "/images/3.jpg",
   },
   {
     name: "Vanilla Macaron",
     price: "$1.75",
-    image: "./assets/4.svg",
+    image: "/images/4.jpg",
   },
 ];
 
