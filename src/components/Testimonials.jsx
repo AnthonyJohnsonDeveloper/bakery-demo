@@ -5,22 +5,22 @@ const testimonials = [
   {
     name: "Emily Rose",
     quote: "The best cupcakes I've ever had. Period. SweetTreats is my go-to!",
-    avatar: "https://via.placeholder.com/80x80?text=ER",
+    avatar: "/images/avatars/A1.jpg",
   },
   {
     name: "Mark Thompson",
     quote: "They made my wedding cake and it was a dream come true!",
-    avatar: "https://via.placeholder.com/80x80?text=MT",
+    avatar: "/images/avatars/A2.jpg",
   },
   {
     name: "Sofia Lin",
     quote: "Always fresh, always delicious. Their macarons are to die for.",
-    avatar: "https://via.placeholder.com/80x80?text=SL",
+    avatar: "/images/avatars/A4.jpg",
   },
   {
     name: "James Wright",
     quote: "Fast delivery and even better taste. Highly recommend!",
-    avatar: "https://via.placeholder.com/80x80?text=JW",
+    avatar: "/images/avatars/A3.jpg",
   },
 ];
 
@@ -33,15 +33,13 @@ const Testimonials = () => {
   const touchEndX = useRef(null);
 
   const next = () => setCurrent((prev) => (prev + 1) % total);
-  const prev = () => setCurrent((prev) => (prev - 1 + total) % total);
+  const prev = () => setCurrent((prev - 1 + total) % total);
 
-  // Auto slide every 5 seconds
   useEffect(() => {
     const timer = setInterval(next, 5000);
     return () => clearInterval(timer);
   }, []);
 
-  // Handle swipe gestures
   const handleTouchStart = (e) => {
     touchStartX.current = e.changedTouches[0].clientX;
   };
@@ -55,15 +53,11 @@ const Testimonials = () => {
     if (!touchStartX.current || !touchEndX.current) return;
 
     const distance = touchStartX.current - touchEndX.current;
-    const threshold = 50; // Minimum swipe distance
+    const threshold = 50;
 
-    if (distance > threshold) {
-      next(); // Swipe left
-    } else if (distance < -threshold) {
-      prev(); // Swipe right
-    }
+    if (distance > threshold) next();
+    else if (distance < -threshold) prev();
 
-    // Reset
     touchStartX.current = null;
     touchEndX.current = null;
   };
@@ -73,55 +67,67 @@ const Testimonials = () => {
       id="testimonials"
       className="py-20 bg-yellow-50 dark:bg-gray-900 transition-colors"
     >
+      <Helmet>
+        <title>Testimonials | SweetTreats Bakery</title>
+        <meta name="description" content="What our happy customers say." />
+      </Helmet>
+
       <div className="max-w-3xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-10">
           What Our Customers Say
         </h2>
 
         <div
-          className="relative h-[300px]"
+          className="relative h-[300px] overflow-hidden"
           ref={containerRef}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((t, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
                 index === current ? "opacity-100 z-10" : "opacity-0 z-0"
               } flex flex-col items-center justify-center bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md`}
             >
               <img
-                src={testimonial.avatar}
-                alt={testimonial.name}
+                src={t.avatar}
+                alt={t.name}
                 className="mx-auto mb-4 rounded-full w-20 h-20 object-cover"
               />
               <p className="text-lg text-gray-700 dark:text-gray-300 italic mb-4">
-                “{testimonial.quote}”
+                “{t.quote}”
               </p>
               <h4 className="font-semibold text-pink-500 dark:text-yellow-400">
-                - {testimonial.name}
+                - {t.name}
               </h4>
             </div>
           ))}
 
-          {/* Manual controls */}
-          <div className="flex justify-center gap-4 mt-6 relative z-20">
-            <button
-              onClick={prev}
-              className="text-xl px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition"
-              aria-label="Previous"
-            >
-              ⬅
-            </button>
-            <button
-              onClick={next}
-              className="text-xl px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition"
-              aria-label="Next"
-            >
-              ➡
-            </button>
-          </div>
+          {/* Arrows: absolutely positioned center-left & center-right */}
+          <button
+  onClick={prev}
+  className="absolute left-4 top-1/2 -translate-y-1/2 bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-pink-600 transition"
+  aria-label="Previous"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+    strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+    <path strokeLinecap="round" strokeLinejoin="round"
+      d="M15 19.5 7.5 12m0 0L15 4.5M7.5 12H21" />
+  </svg>
+</button>
+
+<button
+  onClick={next}
+  className="absolute right-4 top-1/2 -translate-y-1/2 bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-pink-600 transition"
+  aria-label="Next"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+    strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 rotate-180">
+    <path strokeLinecap="round" strokeLinejoin="round"
+      d="M15 19.5 7.5 12m0 0L15 4.5M7.5 12H21" />
+  </svg>
+</button>
         </div>
       </div>
     </section>

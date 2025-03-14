@@ -30,6 +30,11 @@ const Menu = () => {
       id="menu"
       className="scroll-mt-24 py-20 bg-pink-50 dark:bg-gray-900 transition-colors"
     >
+      <Helmet>
+        <title>Menu | SweetTreats Bakery</title>
+        <meta name="description" content="Our best-selling treats and pastries." />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-pink-600 dark:text-yellow-400 mb-10">
           Popular Treats
@@ -48,7 +53,7 @@ const Menu = () => {
                 loading="lazy"
                 className="w-full h-48 object-cover"
               />
-              <div className="p-4">
+              <div className="p-4 flex flex-col items-center justify-center text-center">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                   {item.name}
                 </h3>

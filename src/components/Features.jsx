@@ -26,11 +26,23 @@ const features = [
 
 const Features = () => {
   return (
-    <section id="features" className="bg-gray-100 dark:bg-gray-800 py-20">
+    <section
+      id="features"
+      className="scroll-mt-24 py-20 bg-gray-100 dark:bg-gray-800 transition-colors"
+    >
+      <Helmet>
+        <title>Why Choose Us | SweetTreats Bakery</title>
+        <meta
+          name="description"
+          content="Discover the top reasons customers love SweetTreats Bakery—from daily freshness to custom treats and delivery options."
+        />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12">
           Why Choose Us?
         </h2>
+
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => (
             <div
