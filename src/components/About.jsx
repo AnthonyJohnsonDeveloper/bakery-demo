@@ -1,78 +1,44 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-const Contact = () => {
+const About = () => {
   return (
-    <section
-      id="contact"
-      className="py-20 px-4 bg-white dark:bg-gray-900 transition-colors duration-300"
-    >
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-          Get in Touch
-        </h2>
-        <p className="mb-8 text-gray-600 dark:text-gray-300">
-          Want to work with us or just say hi? Drop a message below!
-        </p>
-        <form className="space-y-6" noValidate>
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-left mb-1 text-gray-800 dark:text-gray-200"
-            >
-              Name <span className="text-red-500">*</span>
-            </label>
-            <input
-              id="name"
-              type="text"
-              required
-              aria-label="Name"
-              placeholder="John Doe"
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-left mb-1 text-gray-800 dark:text-gray-200"
-            >
-              Email <span className="text-red-500">*</span>
-            </label>
-            <input
-              id="email"
-              type="email"
-              required
-              aria-label="Email"
-              placeholder="you@example.com"
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="message"
-              className="block text-left mb-1 text-gray-800 dark:text-gray-200"
-            >
-              Message <span className="text-red-500">*</span>
-            </label>
-            <textarea
-              id="message"
-              rows="5"
-              required
-              aria-label="Message"
-              placeholder="Your message..."
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-md transition"
-          >
-            Send Message
-          </button>
-        </form>
+    <section id="about" className="bg-pink-50 dark:bg-gray-900 py-20">
+      <Helmet>
+        <title>About Us | SweetTreats Bakery</title>
+        <meta name="description" content="Learn about our story, our values, and why we bake with love every day." />
+      </Helmet>
+
+      <div className="max-w-6xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10">
+        {/* Text Content */}
+        <div className="flex-1 text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl font-bold text-pink-600 dark:text-yellow-400 mb-6">
+            About Our Bakery
+          </h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            At <strong>SweetTreats</strong>, we bake with love. From cupcakes to croissants,
+            our handcrafted pastries are made fresh daily with the finest ingredients. Whether
+            you’re grabbing a quick bite or ordering a custom cake — we’ve got you covered.
+          </p>
+          <p className="text-base text-gray-600 dark:text-gray-400 mt-4">
+            Every recipe is made with care and a sprinkle of joy. Come visit our cozy shop or place an order online!
+          </p>
+        </div>
+
+        {/* Image */}
+        <div className="flex-1">
+          <img
+            src="/images/4.jpg"
+            alt="Bakery kitchen"
+            width="500"
+            height="350"
+            loading="lazy"
+            className="rounded-lg shadow-lg object-cover w-full h-auto"
+          />
+        </div>
       </div>
     </section>
   );
 };
 
-export default Contact;
+export default About;

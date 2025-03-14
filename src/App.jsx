@@ -1,5 +1,4 @@
 import React, { Suspense, lazy } from "react";
-import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Gallery from "./components/Gallery";
@@ -18,7 +17,6 @@ function App() {
     <div>
       <Navbar />
       <Home />
-      <Header />
       <Menu />
       <Gallery />
       <Testimonials />

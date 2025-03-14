@@ -43,13 +43,13 @@ const Gallery = () => {
           </div>
 
           <div className="text-center mt-10">
-            <Link
-              to="/"
+            <a
+              href="#home"
               aria-label="Back to homepage"
               className="inline-block px-6 py-3 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition"
             >
               ⬅ Back to Home
-            </Link>
+            </a>
           </div>
         </div>
       </section>
