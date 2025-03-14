@@ -5,22 +5,22 @@ const testimonials = [
   {
     name: "Emily Rose",
     quote: "The best cupcakes I've ever had. Period. SweetTreats is my go-to!",
-    avatar: "/images/avatars/A1.jpg",
+    avatar: "/images/avatars/A1.webp",
   },
   {
     name: "Mark Thompson",
     quote: "They made my wedding cake and it was a dream come true!",
-    avatar: "/images/avatars/A2.jpg",
+    avatar: "/images/avatars/A2.webp",
   },
   {
     name: "Sofia Lin",
     quote: "Always fresh, always delicious. Their macarons are to die for.",
-    avatar: "/images/avatars/A4.jpg",
+    avatar: "/images/avatars/A4.webp",
   },
   {
     name: "James Wright",
     quote: "Fast delivery and even better taste. Highly recommend!",
-    avatar: "/images/avatars/A3.jpg",
+    avatar: "/images/avatars/A3.webp",
   },
 ];
 

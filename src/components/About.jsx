@@ -28,7 +28,7 @@ const About = () => {
         {/* Image */}
         <div className="flex-1">
           <img
-            src="/images/4.jpg"
+            src="/images/4.webp"
             alt="Bakery kitchen"
             width="500"
             height="350"
