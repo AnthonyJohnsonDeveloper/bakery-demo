@@ -52,7 +52,7 @@ Clone the project and install dependencies:
 
 bash
 Copy
-git clone https://github.com/yourusername/sweettreats-demo.git
+git clone https://github.com/AnthonyJohnsonDeveloper/bakery-demo.git
 cd sweettreats-demo
 npm install
 npm run dev
