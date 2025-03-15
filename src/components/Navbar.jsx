@@ -9,6 +9,8 @@ const Navbar = () => {
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -18,6 +20,24 @@ const Navbar = () => {
       localStorage.setItem("theme", "light");
     }
   }, [darkMode]);
+
+  // Auto-close on scroll or resize
+  useEffect(() => {
+    const closeMenu = () => setMenuOpen(false);
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", closeMenu);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", closeMenu);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -35,35 +55,21 @@ const Navbar = () => {
             🍰 SweetTreats
           </h1>
 
+          {/* Desktop Nav */}
           <nav className="space-x-4 text-sm sm:text-base hidden md:flex">
-            <a
-              href="#home"
-              className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300"
-            >
+            <a href="#home" className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300">
               Home
             </a>
-            <a
-              href="#menu"
-              className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300"
-            >
+            <a href="#menu" className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300">
               Menu
             </a>
-            <a
-              href="#about"
-              className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300"
-            >
+            <a href="#about" className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300">
               About
             </a>
-            <a
-              href="#contact"
-              className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300"
-            >
+            <a href="#contact" className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300">
               Contact
             </a>
-            <a
-              href="#testimonials"
-              className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300"
-            >
+            <a href="#testimonials" className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300">
               Testimonials
             </a>
             <button
@@ -75,11 +81,36 @@ const Navbar = () => {
             </button>
           </nav>
 
-          {/* Optional hamburger for mobile */}
-          <button className="md:hidden text-gray-800 dark:text-white focus:outline-none">
+          {/* Hamburger */}
+          <button
+            className="md:hidden text-2xl text-gray-800 dark:text-white focus:outline-none"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle Menu"
+          >
             ☰
           </button>
         </div>
+
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <div className="md:hidden px-4 pb-4 space-y-2 mt-2 text-sm text-gray-800 dark:text-gray-100 font-medium">
+            <a href="#home" onClick={() => setMenuOpen(false)} className="block hover:text-pink-500 dark:hover:text-yellow-300">Home</a>
+            <a href="#menu" onClick={() => setMenuOpen(false)} className="block hover:text-pink-500 dark:hover:text-yellow-300">Menu</a>
+            <a href="#about" onClick={() => setMenuOpen(false)} className="block hover:text-pink-500 dark:hover:text-yellow-300">About</a>
+            <a href="#contact" onClick={() => setMenuOpen(false)} className="block hover:text-pink-500 dark:hover:text-yellow-300">Contact</a>
+            <a href="#testimonials" onClick={() => setMenuOpen(false)} className="block hover:text-pink-500 dark:hover:text-yellow-300">Testimonials</a>
+            <button
+              onClick={() => {
+                setDarkMode(!darkMode);
+                setMenuOpen(false);
+              }}
+              className="text-lg mt-2"
+              aria-label="Toggle Dark Mode"
+            >
+              {darkMode ? "🌙" : "☀️"}
+            </button>
+          </div>
+        )}
       </header>
     </>
   );
