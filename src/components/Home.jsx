@@ -39,10 +39,6 @@ function Home() {
             Welcome to your neighborhood bakery 🍩
           </p>
 
-          <h2 className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-xl font-normal">
-  Freshly baked. Lovingly made. We serve joy in every bite!
-</h2>
-
           <a
             href="#menu"
             className="inline-block px-8 py-3 text-white bg-pink-500 hover:bg-pink-600 dark:bg-yellow-400 dark:text-black dark:hover:bg-yellow-300 rounded-full text-lg font-semibold transition duration-300"
