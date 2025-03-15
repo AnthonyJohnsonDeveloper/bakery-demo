@@ -3,6 +3,9 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Gallery from "./components/Gallery";
 import Testimonials from "./components/Testimonials";
+import FallingDonuts from "./components/FallingDonuts";
+
+
 
 // Lazy-loaded components
 const About = lazy(() => import("./components/About"));
@@ -16,6 +19,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      <FallingDonuts />
       <Home />
       <Menu />
       <Gallery />
