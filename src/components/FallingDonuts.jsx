@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import donutImg from "/images/donut.png"; // Place a small donut icon here
+import donutImg from "/images/donut.webp"; // Place a small donut icon here
 
 const FallingDonuts = () => {
   const [donuts, setDonuts] = useState([]);
