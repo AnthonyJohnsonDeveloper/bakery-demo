@@ -14,7 +14,11 @@ function Home() {
 
         {/* ✅ Preconnect + Preload Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
@@ -38,6 +42,10 @@ function Home() {
           <p className="text-xl text-pink-500 mb-2" aria-hidden="true">
             Welcome to your neighborhood bakery 🍩
           </p>
+
+          <h2 className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-xl font-normal">
+            Freshly baked. Lovingly made. We serve joy in every bite!
+          </h2>
 
           <a
             href="#menu"
