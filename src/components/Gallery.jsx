@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const images = [
   "/images/1.webp",
@@ -14,6 +14,16 @@ const images = [
 ];
 
 const Gallery = () => {
+  const location = useLocation();
+
+  // Scroll to #home when returning from this page
+  useEffect(() => {
+    if (location.pathname === "/" && location.hash === "#home") {
+      const homeSection = document.getElementById("home");
+      if (homeSection) homeSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
+
   return (
     <>
       <Helmet>
@@ -43,13 +53,12 @@ const Gallery = () => {
           </div>
 
           <div className="text-center mt-10">
-            <a
-              href="#home"
-              aria-label="Back to homepage"
+            <Link
+              to="/#home"
               className="inline-block px-6 py-3 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition"
             >
               ⬅ Back to Home
-            </a>
+            </Link>
           </div>
         </div>
       </section>
