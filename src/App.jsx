@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Gallery from "./components/Gallery";
 import Testimonials from "./components/Testimonials";
-import FallingDonuts from "./components/FallingDonuts";
+
 
 
 
@@ -19,7 +19,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <FallingDonuts />
+    
       <Home />
       <Menu />
       <Gallery />

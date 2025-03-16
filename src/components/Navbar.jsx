@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
 const Navbar = () => {
@@ -10,7 +10,6 @@ const Navbar = () => {
   });
 
   const [menuOpen, setMenuOpen] = useState(false);
-  const scrollTimeout = useRef(null); // used for debouncing
 
   useEffect(() => {
     if (darkMode) {
@@ -21,36 +20,6 @@ const Navbar = () => {
       localStorage.setItem("theme", "light");
     }
   }, [darkMode]);
-
-  // Scroll/resize behavior
-  useEffect(() => {
-    const handleScroll = () => {
-      if (scrollTimeout.current) {
-        clearTimeout(scrollTimeout.current);
-      }
-
-      scrollTimeout.current = setTimeout(() => {
-        if (menuOpen && window.scrollY > 20) {
-          setMenuOpen(false);
-        }
-      }, 150); // debounce delay
-    };
-
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setMenuOpen(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
-      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
-    };
-  }, [menuOpen]);
 
   return (
     <>
