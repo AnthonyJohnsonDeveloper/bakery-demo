@@ -28,7 +28,7 @@ const Features = () => {
   return (
     <section
       id="features"
-      className="scroll-mt-24 py-20 bg-gray-100 dark:bg-gray-800 transition-colors"
+      className="relative z-20 scroll-mt-24 py-20 bg-gray-100 dark:bg-gray-800 transition-colors"
     >
       <Helmet>
         <title>Why Choose Us | SweetTreats Bakery</title>

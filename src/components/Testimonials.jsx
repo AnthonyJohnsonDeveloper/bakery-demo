@@ -65,7 +65,7 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="py-20 bg-yellow-50 dark:bg-gray-900 transition-colors"
+      className="relative z-20 py-20 bg-yellow-50 dark:bg-gray-900 transition-colors"
     >
       <Helmet>
         <title>Testimonials | SweetTreats Bakery</title>
@@ -104,30 +104,48 @@ const Testimonials = () => {
             </div>
           ))}
 
-          {/* Arrows: absolutely positioned center-left & center-right */}
+          {/* Navigation Arrows */}
           <button
-  onClick={prev}
-  className="absolute left-4 top-1/2 -translate-y-1/2 bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-pink-600 transition"
-  aria-label="Previous"
->
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-    strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-    <path strokeLinecap="round" strokeLinejoin="round"
-      d="M15 19.5 7.5 12m0 0L15 4.5M7.5 12H21" />
-  </svg>
-</button>
+            onClick={prev}
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-pink-600 transition"
+            aria-label="Previous"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 19.5 7.5 12m0 0L15 4.5M7.5 12H21"
+              />
+            </svg>
+          </button>
 
-<button
-  onClick={next}
-  className="absolute right-4 top-1/2 -translate-y-1/2 bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-pink-600 transition"
-  aria-label="Next"
->
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-    strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 rotate-180">
-    <path strokeLinecap="round" strokeLinejoin="round"
-      d="M15 19.5 7.5 12m0 0L15 4.5M7.5 12H21" />
-  </svg>
-</button>
+          <button
+            onClick={next}
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-pink-600 transition"
+            aria-label="Next"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-5 h-5 rotate-180"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 19.5 7.5 12m0 0L15 4.5M7.5 12H21"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </section>

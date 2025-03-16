@@ -22,7 +22,20 @@ const Contact = () => {
         <p className="mb-8 text-gray-600 dark:text-gray-300">
           Want to work with us or just say hi? Drop a message below!
         </p>
-        <form className="space-y-6" noValidate>
+
+        {/* ✅ Connected to FormSubmit */}
+        <form
+          action="https://formsubmit.co/johnsonanthony98developer@gmail.com"
+          method="POST"
+          className="space-y-6"
+        >
+          {/* FormSubmit Hidden Fields */}
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="New Inquiry from SweetTreats!" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_autoresponse" value="Thanks for reaching out! We'll get back to you soon." />
+          <input type="hidden" name="_next" value="https://yourdomain.com/thanks" />
+
           <div>
             <label
               htmlFor="name"
@@ -33,12 +46,14 @@ const Contact = () => {
             <input
               id="name"
               type="text"
+              name="name"
               required
               aria-label="Name"
               placeholder="John Doe"
               className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
             />
           </div>
+
           <div>
             <label
               htmlFor="email"
@@ -49,12 +64,14 @@ const Contact = () => {
             <input
               id="email"
               type="email"
+              name="email"
               required
               aria-label="Email"
               placeholder="you@example.com"
               className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
             />
           </div>
+
           <div>
             <label
               htmlFor="message"
@@ -64,6 +81,7 @@ const Contact = () => {
             </label>
             <textarea
               id="message"
+              name="message"
               rows="5"
               required
               aria-label="Message"
@@ -71,6 +89,7 @@ const Contact = () => {
               className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
             ></textarea>
           </div>
+
           <button
             type="submit"
             className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-md transition"

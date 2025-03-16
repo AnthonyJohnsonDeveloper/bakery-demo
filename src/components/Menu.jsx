@@ -28,7 +28,7 @@ const Menu = () => {
   return (
     <section
       id="menu"
-      className="scroll-mt-24 py-20 bg-pink-50 dark:bg-gray-900 transition-colors"
+      className="relative z-20 scroll-mt-24 py-20 bg-pink-50 dark:bg-gray-900 transition-colors"
     >
       <Helmet>
         <title>Menu | SweetTreats Bakery</title>
@@ -43,7 +43,7 @@ const Menu = () => {
           {items.map((item, i) => (
             <div
               key={i}
-              className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition transform hover:scale-105"
+              className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition transform hover:scale-105 relative"
             >
               <img
                 src={item.image}

@@ -34,7 +34,7 @@ const Gallery = () => {
         />
       </Helmet>
 
-      <section id="gallery" className="py-20 bg-white dark:bg-gray-900">
+      <section id="gallery" className="relative z-20 py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-10">
             Customer Favorites

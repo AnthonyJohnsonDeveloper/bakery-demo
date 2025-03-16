@@ -3,10 +3,16 @@ import { Helmet } from "react-helmet";
 
 const About = () => {
   return (
-    <section id="about" className="bg-pink-50 dark:bg-gray-900 py-20">
+    <section
+      id="about"
+      className="relative z-20 bg-pink-50 dark:bg-gray-900 py-20"
+    >
       <Helmet>
         <title>About Us | SweetTreats Bakery</title>
-        <meta name="description" content="Learn about our story, our values, and why we bake with love every day." />
+        <meta
+          name="description"
+          content="Learn about our story, our values, and why we bake with love every day."
+        />
       </Helmet>
 
       <div className="max-w-6xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10">

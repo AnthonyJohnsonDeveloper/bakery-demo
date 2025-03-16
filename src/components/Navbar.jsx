@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 
 const Navbar = () => {
@@ -10,6 +10,7 @@ const Navbar = () => {
   });
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const scrollTimeout = useRef(null); // used for debouncing
 
   useEffect(() => {
     if (darkMode) {
@@ -21,23 +22,35 @@ const Navbar = () => {
     }
   }, [darkMode]);
 
-  // Auto-close on scroll or resize
+  // Scroll/resize behavior
   useEffect(() => {
-    const closeMenu = () => setMenuOpen(false);
+    const handleScroll = () => {
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+
+      scrollTimeout.current = setTimeout(() => {
+        if (menuOpen && window.scrollY > 20) {
+          setMenuOpen(false);
+        }
+      }, 150); // debounce delay
+    };
+
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setMenuOpen(false);
       }
     };
 
-    window.addEventListener("scroll", closeMenu);
+    window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("scroll", closeMenu);
+      window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
+      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
     };
-  }, []);
+  }, [menuOpen]);
 
   return (
     <>
@@ -57,21 +70,11 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <nav className="space-x-4 text-sm sm:text-base hidden md:flex">
-            <a href="#home" className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300">
-              Home
-            </a>
-            <a href="#menu" className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300">
-              Menu
-            </a>
-            <a href="#about" className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300">
-              About
-            </a>
-            <a href="#contact" className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300">
-              Contact
-            </a>
-            <a href="#testimonials" className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300">
-              Testimonials
-            </a>
+            <a href="#home" className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300">Home</a>
+            <a href="#menu" className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300">Menu</a>
+            <a href="#about" className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300">About</a>
+            <a href="#contact" className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300">Contact</a>
+            <a href="#testimonials" className="text-gray-800 dark:text-gray-200 hover:text-pink-500 dark:hover:text-yellow-300">Testimonials</a>
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="ml-2 text-lg"

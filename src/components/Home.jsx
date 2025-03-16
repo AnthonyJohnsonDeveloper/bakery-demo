@@ -14,11 +14,7 @@ function Home() {
 
         {/* ✅ Preconnect + Preload Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
@@ -30,10 +26,9 @@ function Home() {
 
       <section
         id="home"
-        className="min-h-screen flex items-center justify-center text-center px-4 bg-yellow-100 dark:bg-gray-900 transition-colors duration-300"
+        className="relative z-20 min-h-screen flex items-center justify-center text-center px-4 bg-yellow-100 dark:bg-gray-900 transition-colors duration-300"
       >
         <div className="max-w-3xl flex flex-col items-center justify-center min-h-[60vh]">
-          {/* ✅ Simplified heading for faster paint */}
           <h1 className="text-4xl md:text-6xl font-bold text-brown-800 dark:text-white mb-4 leading-snug tracking-tight">
             SweetTreats Bakery
           </h1>

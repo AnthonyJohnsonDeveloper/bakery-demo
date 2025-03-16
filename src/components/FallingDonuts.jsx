@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import donutImg from "/images/donut.webp"; // Place a small donut icon here
+import donutImg from "/images/donut.webp";
 
 const FallingDonuts = () => {
   const [donuts, setDonuts] = useState([]);
@@ -41,7 +41,9 @@ const FallingDonuts = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-40">
+    <div
+      className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
+    >
       {donuts.map((donut) => (
         <img
           key={donut.id}

@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 
 const Hero = () => {
   return (
-    <section className="bg-white dark:bg-gray-900 transition-colors min-h-screen flex items-center">
+    <section className="relative z-20 bg-white dark:bg-gray-900 transition-colors min-h-screen flex items-center">
       <Helmet>
         <title>SweetTreats Bakery | Home</title>
         <meta
